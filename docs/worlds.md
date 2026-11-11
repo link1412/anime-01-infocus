@@ -35,7 +35,7 @@ python -m film.lookdev sea video 18 22 --out out/sea.mp4
 - Frame size is 1696x954. In "view units", y runs over [-1, 1] and x over [-1.778, 1.778] across the whole target. The camera crops the central 1/1.06 of that and keeps the rest as overscan for hand shake.
 - `film/core.py` has `GL`, `Target`, `Track` (keyframes with smoothstep easing) and `smooth`. Shared GLSL lives in `film/shaders/common.glsl`.
 - Shaders are `#version 410`. `#include "file.glsl"` is resolved by `core.glsl()`. For instanced quads, use `gl.instanced`.
-- CJK text goes through `film/fonts.py`, which finds the macOS system faces (`Songti.ttc`, `Kaiti.ttc`, `Xingkai.ttc`, `PingFang.ttc`, `Menlo.ttc`).
+- Text goes through `film/fonts.py`, which finds the macOS system faces (`Songti.ttc`, `Kaiti.ttc`, `Xingkai.ttc`, `PingFang.ttc`, `Menlo.ttc`, `Helvetica.ttc`, `HelveticaNeue.ttc`, `Arial Narrow.ttf`). The pixel world's HUD type is drawn from bitmap tables in `hud_pixel.py`. Fonts are the only files the film reads that it did not make itself.
 
 ## Rules
 

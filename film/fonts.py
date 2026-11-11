@@ -5,6 +5,8 @@ from PIL import ImageFont
 
 SYS = "/System/Library/Fonts/"
 SUP = SYS + "Supplemental/"
+# not installed until someone asks for them: Font Book, search, Download
+ON_DEMAND = {"Kaiti.ttc": "Kaiti SC (楷体-简)", "Xingkai.ttc": "Xingkai SC (行楷-简)"}
 
 
 @lru_cache(maxsize=None)
@@ -16,6 +18,8 @@ def path(name: str) -> str:
     hits = glob.glob(f"/System/Library/AssetsV2/com_apple_MobileAsset_Font*/*/AssetData/{name}")
     if hits:
         return hits[0]
+    if name in ON_DEMAND:
+        raise FileNotFoundError(f"{name}: open Font Book, search for {ON_DEMAND[name]} and click Download")
     raise FileNotFoundError(name)
 
 

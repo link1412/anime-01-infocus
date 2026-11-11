@@ -12,7 +12,7 @@
 
 《合焦》是一部 97 秒的短片，全片只有一个镜头：一部手机对着一台无反相机的电子取景器拍，取景器里依次出现几个世界。先是雨里的一朵罂粟花，花瓣上的水珠里有一片海；然后是黑沙滩、一幅水墨长卷、一朵由字组成的花、一处像素画的海边栈桥，最后是一张书桌。
 
-画面和声音全部由这个仓库里的代码算出来。没有摄影机，没有照片，没有录音，没有素材库，也没有用图像生成模型。代码由 Claude 编写。
+画面和声音全部由这个仓库里的代码算出来。没有摄影机，没有照片，没有录音，没有采样音色，没有素材库，也没有用图像生成模型。唯一用到的外部资源是 macOS 自带的字体。代码由 Claude 编写。
 
 ### 怎么做的
 
@@ -41,9 +41,11 @@
 
 需要：
 
-- **macOS**。字体用的是系统自带的宋体、楷体、行楷、苹方和 Menlo，渲染用 OpenGL 4.1，音频编码用 macOS 的 `aac_at`。
+- **macOS**。字体用的是系统自带的宋体、楷体、行楷、苹方、Menlo、Helvetica、Helvetica Neue 和 Arial Narrow，渲染用 OpenGL 4.1，音频编码用 macOS 的 `aac_at`。
 - Apple Silicon。成片在 M4 Pro 上平均约 0.17 秒一帧。
 - Python 3.13 和 ffmpeg。
+
+楷体和行楷不是 macOS 预装的字体，要先下载：打开"字体册"，搜索 **楷体-简** 和 **行楷-简**，分别点"下载"。
 
 ```sh
 python3.13 -m venv .venv
@@ -94,7 +96,7 @@ python -m film.audio out/audio/mix.wav                      # 只出声音
 
 *Hejiao* (合焦, "in focus") is a 97-second film shot as one continuous take. A phone is filming the electronic viewfinder of a mirrorless camera, and the viewfinder shows one world after another. First a poppy in the rain, with a sea inside a drop of water on one of its petals. Then a black-sand beach, an ink-wash handscroll, a flower made of written characters, a pixel-art jetty at sunset, and finally a desk.
 
-Every frame and every sound is computed by the code in this repository. There is no camera, no photograph, no recording, no stock footage and no image generator. The code was written by Claude.
+Every frame and every sound is computed by the code in this repository. There is no camera, no photograph, no recording, no sampled instrument, no stock footage and no image generator. The only outside resources are the fonts that ship with macOS. The code was written by Claude.
 
 ### How it works
 
@@ -123,9 +125,11 @@ None of the moiré, noise, dust in the eyepiece or hand shake is an effect added
 
 Requirements:
 
-- **macOS**. It uses the system CJK fonts (Songti, Kaiti, Xingkai, PingFang) and Menlo, OpenGL 4.1, and macOS's `aac_at` audio encoder.
+- **macOS**. It uses system fonts (Songti, Kaiti, Xingkai, PingFang, Menlo, Helvetica, Helvetica Neue, Arial Narrow), OpenGL 4.1, and macOS's `aac_at` audio encoder.
 - Apple Silicon. The finished film averages about 0.17 s a frame on an M4 Pro.
 - Python 3.13 and ffmpeg.
+
+Kaiti and Xingkai are not installed on macOS by default. Open Font Book, search for **Kaiti SC** and **Xingkai SC**, and click Download on each.
 
 ```sh
 python3.13 -m venv .venv
