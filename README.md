@@ -1,8 +1,8 @@
 # 合焦 · *Hejiao*
 
-![Eight frames from the film](docs/frames.jpg)
+[![Eight frames from the film](docs/frames.jpg)](https://www.bilibili.com/video/BV16Wxd6sEgK/)
 
-**观看 / Watch:** （链接待补 / link coming soon）
+**▶ 观看 / Watch: [bilibili.com/video/BV16Wxd6sEgK](https://www.bilibili.com/video/BV16Wxd6sEgK/)**
 
 [中文](#中文) · [English](#english)
 
